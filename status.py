@@ -11,7 +11,7 @@ class Status(object):
         thread.daemon = True
         thread.start()
 
-    def run():
-        while True:
-            print('Doing something imporant in the background')
-            time.sleep(1)
+def run():
+    while True:
+        print('Doing something imporant in the background')
+        time.sleep(1)
