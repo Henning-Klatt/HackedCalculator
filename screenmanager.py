@@ -3,7 +3,7 @@
 
 class Manager:
     @classmethod
-    def startScreen():
+    def startScreen(self):
         disp.clear((0, 255, 0))
 
 
