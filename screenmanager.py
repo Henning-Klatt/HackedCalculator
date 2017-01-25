@@ -17,7 +17,9 @@ class Manager:
         font_hacked = ImageFont.truetype('Fonts/hacked.ttf', 25)
         draw_text(disp.buffer, "Henning's hacked calculator!", (50, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
-        Status.start()
+        statusmanager = Status()
+        statusmanager.start()
+
 
 def draw_text(image, text, position, angle, font, fill=(255,255,255)):
     draw = ImageDraw.Draw(image)
