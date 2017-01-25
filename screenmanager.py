@@ -32,7 +32,7 @@ class Manager:
 
     @classmethod
     def startKeymanager(self):
-        keymanagerthread = Thread(target=keymanager.run, args=(,))
+        keymanagerthread = Thread(target=keymanager.run, args=())
         #keymanager_thread.daemon = True
         keymanagerthread.start()
         print "Keymanager aktiviert!"
