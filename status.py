@@ -20,6 +20,7 @@ class Status(object):
 
 def run(disp):
     while True:
+        disp.clear((0, 0, 0))
         draw = disp.draw()
         font = ImageFont.truetype('Fonts/clean.ttf', 11)
         uptime = str(timedelta(seconds = float(open('/proc/uptime', 'r').readline().split()[0]))).rsplit('.', 1)[0]
