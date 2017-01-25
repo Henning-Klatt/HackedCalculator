@@ -15,9 +15,3 @@ class Status(object):
         while True:
             print('Doing something imporant in the background')
             time.sleep(self.interval)
-
-#example = Status()
-time.sleep(3)
-print('Checkpoint')
-time.sleep(2)
-print('Bye')
