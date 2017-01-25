@@ -8,7 +8,7 @@ import Adafruit_ILI9341 as TFT
 import Adafruit_GPIO as GPIO
 import Adafruit_GPIO.SPI as SPI
 
-from screenmanager import startScreen
+from screenmanager import Manager
 
 DC = 18
 RST = 23
@@ -19,4 +19,4 @@ disp = TFT.ILI9341(DC, rst=RST, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_h
 disp.begin()
 disp.clear()
 
-screenmanager.startScreen()
+Manager.startScreen()
