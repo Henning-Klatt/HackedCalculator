@@ -26,7 +26,7 @@ class Manager:
         print "1"
         #status_thread = threading.Thread(target=status.run(disp), args=())
         #status_thread.daemon = True
-        start_new_thread(status.run,(disp))
+        start_new_thread(status.run,(disp,))
         print "2"
         #status_thread.start()
         print "Statusscreen aktiviert!"
