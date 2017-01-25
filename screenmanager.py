@@ -22,9 +22,10 @@ class Manager:
         draw_text(disp.buffer, "Henning's hacked calculator!", (45, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
         time.sleep(2)
+        print "1"
         status_thread = threading.Thread(target=status.run(disp), args=())
         status_thread.daemon = True
-        print "1"
+        print "2"
         status_thread.start()
         print "Statusscreen aktiviert!"
 
