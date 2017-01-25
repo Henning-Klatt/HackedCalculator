@@ -5,9 +5,9 @@ import threading
 import time
 from datetime import timedelta
 
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
+#from PIL import Image
+#from PIL import ImageDraw
+#from PIL import ImageFont
 
 import screenmanager
 
