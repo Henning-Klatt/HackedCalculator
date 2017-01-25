@@ -22,21 +22,18 @@ class Manager:
         font_hacked = ImageFont.truetype('Fonts/hacked.ttf', 25)
         draw_text(disp.buffer, "Henning's hacked calculator!", (45, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
-        print "Started Screen Manager..."
+        print "Starting Screen Manager..."
         time.sleep(2)
-        print "1"
         #status_thread = threading.Thread(target=status.run(disp), args=())
         #status_thread.daemon = True
         statusthread = Thread(target=status.run, args=(disp,))
         statusthread.start()
-        print "2"
-        #status_thread.start()
-        print "Statusscreen aktiviert!"
+        print "Started Screen manager"
 
     def startKeymanager(self):
-        keymanager_thread = threading.Thread(target=keymanager.run(), args=())
+        keymanagerthread = Thread(target=keymanager.run, args=(disp,))
         #keymanager_thread.daemon = True
-        keymanager_thread.start()
+        keymanagerthread.start()
         print "Keymanager aktiviert!"
 
 
