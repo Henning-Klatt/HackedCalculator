@@ -8,7 +8,7 @@ import Adafruit_ILI9341 as TFT
 import Adafruit_GPIO as GPIO
 import Adafruit_GPIO.SPI as SPI
 
-import screenmanager
+from screenmanager import startScreen
 
 DC = 18
 RST = 23
