@@ -21,6 +21,6 @@ def run(disp):
         disp.clear((0, 0, 0))
         draw = disp.draw()
         uptime = str(timedelta(seconds = float(open('/proc/uptime', 'r').readline().split()[0]))).rsplit('.', 1)[0]
-        screenmanager.draw_text(disp.buffer, "Uptime: " + uptime, (0, 239), 90, font_clean, fill=(255,255,255))
+        screenmanager.draw_text(disp.buffer, "Uptime: " + uptime, (0, 220), 90, font_clean, fill=(255,255,255))
         disp.display()
         time.sleep(1)
