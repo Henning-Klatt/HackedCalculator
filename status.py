@@ -5,7 +5,7 @@ import threading
 import time
 
 class Status(object):
-    def start(self):
+    def start():
         print "Statusseite gestartet"
         thread = threading.Thread(target=run(), args=())
         thread.daemon = True
