@@ -9,6 +9,8 @@ from datetime import timedelta
 #from PIL import ImageDraw
 #from PIL import ImageFont
 
+from fonts import font_clean
+
 import screenmanager
 
 class Status(object):
@@ -22,7 +24,7 @@ def run(disp):
     while True:
         disp.clear((0, 0, 0))
         draw = disp.draw()
-        font = ImageFont.truetype('Fonts/clean.ttf', 11)
+        font_clean = ImageFont.truetype('Fonts/clean.ttf', 11)
         uptime = str(timedelta(seconds = float(open('/proc/uptime', 'r').readline().split()[0]))).rsplit('.', 1)[0]
         screenmanager.draw_text(disp.buffer, "Uptime: " + uptime, (20, 0), 90, font, fill=(255,255,255))
         disp.display()
