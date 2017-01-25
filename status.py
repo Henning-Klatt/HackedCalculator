@@ -5,10 +5,10 @@ import threading
 import time
 
 class Status(object):
-    def __init__(self, interval=1):
+    def start(self, interval=1):
         self.interval = interval
         thread = threading.Thread(target=self.run, args=())
-        thread.daemon = True 
+        thread.daemon = True
         thread.start()
 
     def run(self):
