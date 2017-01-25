@@ -18,4 +18,4 @@ disp = TFT.ILI9341(DC, rst=RST, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_h
 disp.begin()
 
 Manager.startScreen(disp)
-Manager.startKeymanager()
+#Manager.startKeymanager()
