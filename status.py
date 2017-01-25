@@ -5,14 +5,13 @@ import threading
 import time
 
 class Status(object):
-    def start(interval=1):
+    def start():
         print "Statusseite gestartet"
-        self.interval = interval
-        thread = threading.Thread(target=self.run, args=())
+        thread = threading.Thread(target=run, args=())
         thread.daemon = True
         thread.start()
 
-    def run(self):
+    def run():
         while True:
             print('Doing something imporant in the background')
-            time.sleep(self.interval)
+            time.sleep(1)
