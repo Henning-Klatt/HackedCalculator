@@ -2,10 +2,8 @@
 # coding: utf8
 
 class Manager:
-    def __init__(self, master):
-        print "__init__"
-
-    def startScreen(self):
+    @classmethod
+    def startScreen():
         disp.clear((0, 255, 0))
 
 
