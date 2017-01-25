@@ -11,7 +11,7 @@ class Manager:
         draw = disp.draw()
         #Y Links, X Links, Y Rechts, X Rechts
         draw.line((40, 0, 40, 319), fill=(255,255,255))
-        font_hacked = ImageFont.truetype('Fonts/hacked.ttf', 30)
+        font_hacked = ImageFont.truetype('Fonts/hacked.ttf', 25)
         draw_text(disp.buffer, "Henning's hacked calculator!", (50, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
 
