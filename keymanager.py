@@ -3,7 +3,7 @@
 
 import time
 
-def run(self):
+def run():
     try:
         while True:
             time.sleep(10000)
