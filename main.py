@@ -1,12 +1,5 @@
 #!/usr/bin/env python
 # coding: utf8
-from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
-
-import Adafruit_ILI9341 as TFT
-import Adafruit_GPIO as GPIO
-import Adafruit_GPIO.SPI as SPI
 
 from screenmanager import Manager
 
@@ -19,4 +12,4 @@ disp = TFT.ILI9341(DC, rst=RST, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_h
 disp.begin()
 disp.clear()
 
-Manager.startScreen()
+Manager.startScreen(disp)
