@@ -9,9 +9,10 @@ class Manager:
     def startScreen(self, disp):
         disp.clear((0, 0, 0))
         draw = disp.draw()
-        #
+        #Y Links, X Links, Y Rechts, X Rechts
         draw.line((40, 0, 40, 319), fill=(255,255,255))
-        draw_text(disp.buffer, "Henning's hacked calculator!", (50, 150), 90, ImageFont.load_default(), fill=(255,255,255))
+        font_hacked = ImageFont.truetype('Hacked.ttf', 30)
+        draw_text(disp.buffer, "Henning's hacked calculator!", (50, 150), 90, font_hacked, fill=(255,255,255))
         disp.display()
 
 
