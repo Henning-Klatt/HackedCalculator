@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # coding: utf8
 import time
-import threading
+#import threading
+from thread import start_new_thread
 
 from PIL import Image
 from PIL import ImageDraw
@@ -23,10 +24,11 @@ class Manager:
         disp.display()
         time.sleep(2)
         print "1"
-        status_thread = threading.Thread(target=status.run(disp), args=())
-        status_thread.daemon = True
+        #status_thread = threading.Thread(target=status.run(disp), args=())
+        #status_thread.daemon = True
+        start_new_thread(status.run,(disp))
         print "2"
-        status_thread.start()
+        #status_thread.start()
         print "Statusscreen aktiviert!"
 
     def startKeymanager(self):
