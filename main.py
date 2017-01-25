@@ -6,6 +6,7 @@ import Adafruit_GPIO as GPIO
 import Adafruit_GPIO.SPI as SPI
 
 from screenmanager import Manager
+from keymanager import Keymanager
 
 DC = 18
 RST = 23
@@ -16,3 +17,6 @@ disp = TFT.ILI9341(DC, rst=RST, spi=SPI.SpiDev(SPI_PORT, SPI_DEVICE, max_speed_h
 disp.begin()
 
 Manager.startScreen(disp)
+
+keymanager = Keymanager()
+keymanager.start()
