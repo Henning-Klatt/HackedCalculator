@@ -18,7 +18,7 @@ class Manager:
         #Y Links, X Links, Y Rechts, X Rechts
         draw.line((40, 0, 40, 319), fill=(255,255,255))
         font_hacked = ImageFont.truetype('Fonts/hacked.ttf', 25)
-        draw_text(disp.buffer, "Henning's hacked calculator!", (50, 0), 90, font_hacked, fill=(255,255,255))
+        draw_text(disp.buffer, "Henning's hacked calculator!", (45, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
         time.sleep(2)
         thread = threading.Thread(target=status.run(disp), args=())
