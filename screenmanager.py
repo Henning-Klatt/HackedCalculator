@@ -9,8 +9,8 @@ class Manager:
     def startScreen(self, disp):
         disp.clear((0, 0, 0))
         draw = disp.draw()
-        draw.line((0, 320), fill=(255,255,255))
-        draw_text(disp.buffer, "Henning's hacked calculator!", (150, 120), 90, ImageFont.load_default(), fill=(255,255,255))
+        draw.line((0, 320, 1, 321), fill=(255,255,255))
+        draw_text(disp.buffer, "Henning's hacked calculator!", (50, 150), 90, ImageFont.load_default(), fill=(255,255,255))
         disp.display()
 
 
