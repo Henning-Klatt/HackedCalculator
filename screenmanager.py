@@ -4,6 +4,7 @@ from main import *
 
 class Manager:
     def __init__(self, master):
+        print "__init__"
 
     def startScreen():
         disp.clear((0, 255, 0))
