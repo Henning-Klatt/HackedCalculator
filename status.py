@@ -9,7 +9,7 @@ from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 
-from screenmanager import draw_text
+import screenmanager
 
 class Status(object):
     def start(self, disp):
