@@ -4,8 +4,9 @@
 import threading
 import time
 
-class Status:
+class Status(object):
     def start(self, interval=1):
+        print "Statusseite gestartet"
         self.interval = interval
         thread = threading.Thread(target=self.run, args=())
         thread.daemon = True
