@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # coding: utf8
-from main import *
 
 class Manager:
     def __init__(self, master):
