@@ -22,7 +22,7 @@ def run(disp):
         disp.clear((0, 0, 0))
         draw = disp.draw()
         uptime = str(timedelta(seconds = float(open('/proc/uptime', 'r').readline().split()[0]))).rsplit('.', 1)[0]
-        cpu_usage = psutil.cpu_percent()
+        cpu_usage = str(psutil.cpu_percent())
         screenmanager.draw_text(disp.buffer, "Uptime: " + uptime, (0, 220), 90, font_clean, fill=(255,255,255))
         screenmanager.draw_text(disp.buffer, "CPU Load: " + cpu_usage, (20, 220), 90, font_clean, fill=(255,255,255))
         disp.display()
