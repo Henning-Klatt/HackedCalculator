@@ -7,11 +7,11 @@ import time
 class Status(object):
     def start(self):
         print "Statusseite gestartet"
-        thread = threading.Thread(target=run, args=())
+        thread = threading.Thread(target=self.run, args=())
         thread.daemon = True
         thread.start()
 
-    def run():
+    def run(self):
         while True:
             print('Doing something imporant in the background')
             time.sleep(1)
