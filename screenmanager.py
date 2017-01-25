@@ -28,7 +28,7 @@ class Manager:
         print "Statusscreen aktiviert!"
 
     def startKeymanager(self):
-        keymanager_thread = threading.Thread(target=keymanager.run(disp), args=())
+        keymanager_thread = threading.Thread(target=keymanager.run(), args=())
         #keymanager_thread.daemon = True
         keymanager_thread.start()
         print "Keymanager aktiviert!"

@@ -4,6 +4,7 @@
 import time
 
 def run():
+    print "Keylistener aktiviert!"
     try:
         while True:
             time.sleep(10000)
