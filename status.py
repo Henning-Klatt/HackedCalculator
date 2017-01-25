@@ -10,13 +10,6 @@ from fonts import font_clean
 
 import screenmanager
 
-class Status(object):
-    def start(self, disp):
-        print "Statusseite gestartet"
-        thread = threading.Thread(target=run(disp), args=())
-        thread.daemon = True
-        thread.start()
-
 def run(disp):
     while True:
         disp.clear((0, 0, 0))
