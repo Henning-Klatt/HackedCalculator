@@ -3,4 +3,4 @@
 
 from PIL import ImageFont
 
-font_clean = ImageFont.truetype('Fonts/clean.ttf', 11)
+font_clean = ImageFont.truetype('Fonts/clean.ttf', 20)
