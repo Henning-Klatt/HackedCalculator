@@ -31,7 +31,7 @@ class Manager:
         print "Started Screen manager"
 
     def startKeymanager(self):
-        keymanagerthread = Thread(target=keymanager.run, args=())
+        keymanagerthread = Thread(target=keymanager.run, args=(self,))
         #keymanager_thread.daemon = True
         keymanagerthread.start()
         print "Keymanager aktiviert!"
