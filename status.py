@@ -5,6 +5,10 @@ import threading
 import time
 from datetime import timedelta
 
+from PIL import Image
+from PIL import ImageDraw
+from PIL import ImageFont
+
 class Status(object):
     def start(self, disp):
         print "Statusseite gestartet"
