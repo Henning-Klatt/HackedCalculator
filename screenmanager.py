@@ -30,7 +30,7 @@ class Manager:
         statusthread.start()
         print "Started Screen manager"
 
-    def startKeymanager():
+    def startKeymanager(self):
         keymanagerthread = Thread(target=keymanager.run, args=())
         #keymanager_thread.daemon = True
         keymanagerthread.start()
