@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # coding: utf8
+import time
+
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
@@ -17,6 +19,7 @@ class Manager:
         font_hacked = ImageFont.truetype('Fonts/hacked.ttf', 25)
         draw_text(disp.buffer, "Henning's hacked calculator!", (50, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
+        time.sleep(2)
         statusmanager = Status()
         statusmanager.start(disp)
 
