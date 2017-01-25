@@ -2,7 +2,7 @@
 # coding: utf8
 import time
 #import threading
-from thread import start_new_thread
+from threading import Thread
 
 from PIL import Image
 from PIL import ImageDraw
@@ -22,11 +22,12 @@ class Manager:
         font_hacked = ImageFont.truetype('Fonts/hacked.ttf', 25)
         draw_text(disp.buffer, "Henning's hacked calculator!", (45, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
+        print "Started Screen Manager..."
         time.sleep(2)
         print "1"
         #status_thread = threading.Thread(target=status.run(disp), args=())
         #status_thread.daemon = True
-        start_new_thread(status.run,(disp,))
+        t = Thread(target=status.run, args=(disp,))
         print "2"
         #status_thread.start()
         print "Statusscreen aktiviert!"
