@@ -4,7 +4,7 @@ from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 
-from status import Status
+import status
 
 #Dimensions: 240 x 320
 class Manager:
@@ -17,7 +17,8 @@ class Manager:
         font_hacked = ImageFont.truetype('Fonts/hacked.ttf', 25)
         draw_text(disp.buffer, "Henning's hacked calculator!", (50, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
-        satus = Status.start(self)
+        status = status.Status
+        status.start()
 
 
 def draw_text(image, text, position, angle, font, fill=(255,255,255)):
