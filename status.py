@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf8
 
-import threading
 import time
 import psutil
 from datetime import timedelta

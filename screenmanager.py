@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf8
 import time
+import threading
 
 from PIL import Image
 from PIL import ImageDraw
