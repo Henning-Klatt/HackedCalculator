@@ -4,7 +4,7 @@
 import threading
 import time
 
-class Status(object):
+class Status:
     def start(self, interval=1):
         self.interval = interval
         thread = threading.Thread(target=self.run, args=())
