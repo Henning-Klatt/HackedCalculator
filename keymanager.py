@@ -2,14 +2,6 @@
 # coding: utf8
 
 import time
-import threading
-
-class Keymanager(object):
-    def start(self):
-        print "Key listener aktiviert!"
-        thread = threading.Thread(target=run(), args=())
-        thread.daemon = True
-        thread.start()
 
 def run():
     try:

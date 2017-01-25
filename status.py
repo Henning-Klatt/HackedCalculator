@@ -6,7 +6,6 @@ import psutil
 from datetime import timedelta
 
 from fonts import font_clean
-
 import screenmanager
 
 def run(disp):

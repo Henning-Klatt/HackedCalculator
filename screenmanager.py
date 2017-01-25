@@ -8,6 +8,7 @@ from PIL import ImageDraw
 from PIL import ImageFont
 
 import status
+import keymanager
 
 #Dimensions: 240 x 320
 class Manager:
@@ -24,6 +25,13 @@ class Manager:
         thread = threading.Thread(target=status.run(disp), args=())
         thread.daemon = True
         thread.start()
+        print "Statusscreen aktiviert!"
+
+    def startKeymanager(self):
+        thread = threading.Thread(target=keymanager.run(disp), args=())
+        thread.daemon = True
+        thread.start()
+        print "Keymanager aktiviert!"
 
 
 def draw_text(image, text, position, angle, font, fill=(255,255,255)):
