@@ -5,7 +5,7 @@ import threading
 import time
 
 class Status(object):
-    def start(self, interval=1):
+    def start(interval=1):
         print "Statusseite gestartet"
         self.interval = interval
         thread = threading.Thread(target=self.run, args=())
