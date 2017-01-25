@@ -16,7 +16,7 @@ class Status(object):
             print('Doing something imporant in the background')
             time.sleep(self.interval)
 
-example = ThreadingExample()
+example = Status()
 time.sleep(3)
 print('Checkpoint')
 time.sleep(2)
