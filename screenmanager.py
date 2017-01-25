@@ -22,15 +22,15 @@ class Manager:
         draw_text(disp.buffer, "Henning's hacked calculator!", (45, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
         time.sleep(2)
-        thread = threading.Thread(target=status.run(disp), args=())
-        thread.daemon = True
-        thread.start()
+        status_thread = threading.Thread(target=status.run(disp), args=())
+        status_thread.daemon = True
+        status_thread.start()
         print "Statusscreen aktiviert!"
 
     def startKeymanager(self):
-        thread = threading.Thread(target=keymanager.run(disp), args=())
-        thread.daemon = True
-        thread.start()
+        keymanager_thread = threading.Thread(target=keymanager.run(disp), args=())
+        keymanager_thread.daemon = True
+        keymanager_thread.start()
         print "Keymanager aktiviert!"
 
 
