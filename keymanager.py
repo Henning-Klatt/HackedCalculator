@@ -21,7 +21,6 @@ def run():
             if(key == "h"):
                 print "Home Menü"
                 screenmanager.Manager.stopScreen()
-
             del key
         else:
             key = click.getchar()
