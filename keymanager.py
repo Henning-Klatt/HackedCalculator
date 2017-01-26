@@ -14,6 +14,7 @@ def run():
             if(key == "c"):
                 print "Beende Programm..."
                 disp.clear((0, 0, 0))
+                disp.display()
                 os._exit(1)
             del key
         else:
