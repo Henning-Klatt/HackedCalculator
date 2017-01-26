@@ -5,6 +5,8 @@ import time
 import click
 import sys, os
 
+import screenmanager
+
 from display import disp
 
 def run():
@@ -16,6 +18,10 @@ def run():
                 disp.clear((0, 0, 0))
                 disp.display()
                 os._exit(1)
+            if(key == "h"):
+                print "Home Menü"
+                screenmanager.stopScreen()
+
             del key
         else:
             key = click.getchar()
