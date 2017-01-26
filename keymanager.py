@@ -4,7 +4,9 @@
 import time
 import click
 
-def run(disp):
+from main import disp
+
+def run():
     while True:
         if 'key' in locals():
             print "Taste: " + key

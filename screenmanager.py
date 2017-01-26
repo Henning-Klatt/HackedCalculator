@@ -34,8 +34,8 @@ class Manager:
         statusthread.stop()
 
     @classmethod
-    def startKeymanager(self, disp):
-        keymanagerthread = Thread(target=keymanager.run, args=(disp,))
+    def startKeymanager(self):
+        keymanagerthread = Thread(target=keymanager.run, args=())
         #keymanager_thread.daemon = True
         keymanagerthread.start()
         print "Keymanager aktiviert!"
