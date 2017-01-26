@@ -9,7 +9,7 @@ import screenmanager
 
 from display import disp
 
-def run():
+def run(statusthread):
     while True:
         if 'key' in locals():
             print "Taste: " + key
@@ -20,7 +20,7 @@ def run():
                 os._exit(1)
             if(key == "h"):
                 print "Home Menü"
-                screenmanager.Manager.stopScreen()
+                screenmanager.Manager.stopScreen(statusthread)
 
             del key
         else:
