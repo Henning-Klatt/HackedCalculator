@@ -9,7 +9,7 @@ import screenmanager
 
 from display import disp
 
-def run(statusthread):
+def run():
     while True:
         if 'key' in locals():
             print "Taste: " + key
