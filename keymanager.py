@@ -6,6 +6,6 @@ import time
 def run():
     try:
         while True:
-            time.sleep(10000)
+            time.sleep(.1)
     except KeyboardInterrupt:
         print "Beende Programm..."
