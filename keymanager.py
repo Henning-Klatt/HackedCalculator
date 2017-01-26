@@ -5,6 +5,7 @@ import time
 import click
 
 from display import disp
+from screenmanager import Manager
 
 def run():
     while True:
@@ -12,6 +13,7 @@ def run():
             print "Taste: " + key
             if(key == "c"):
                 print "Beende Programm..."
+                Manager.stopScreen()
                 disp.clear((0, 0, 0))
             del key
         else:
