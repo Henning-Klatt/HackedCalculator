@@ -20,7 +20,7 @@ def run():
                 os._exit(1)
             if(key == "h"):
                 print "Home Menü"
-                screenmanager.Manager.stopScreen(statusthread)
+                screenmanager.Manager.stopScreen()
 
             del key
         else:
