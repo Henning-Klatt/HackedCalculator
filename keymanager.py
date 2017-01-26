@@ -6,7 +6,7 @@ import click
 
 def run():
     while True:
-        if (key):
+        if 'key' in locals():
             print "Taste: " + key
             del key
         else:
