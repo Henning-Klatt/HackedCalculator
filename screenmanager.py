@@ -29,7 +29,7 @@ class Manager:
         statusthread.start()
 
     @classmethod
-    def stopScreen():
+    def stopScreen(self):
         statusthread.stop()
 
     @classmethod
