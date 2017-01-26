@@ -4,7 +4,7 @@
 import time
 import click
 
-from main import disp
+from display import disp
 
 def run():
     while True:
