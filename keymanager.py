@@ -3,7 +3,7 @@
 
 import time
 import click
-import sys
+import sys, os
 
 from display import disp
 
@@ -14,7 +14,7 @@ def run():
             if(key == "c"):
                 print "Beende Programm..."
                 disp.clear((0, 0, 0))
-                sys.exit(1)
+                os._exit(1)
             del key
         else:
             key = click.getchar()
