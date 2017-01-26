@@ -32,7 +32,8 @@ class Manager:
     @classmethod
     def stopScreen(self):
         global statusthread
-        statusthread.stop()
+        statusthread.do_run = False
+        statusthread.join()
 
     @classmethod
     def startKeymanager(self):
