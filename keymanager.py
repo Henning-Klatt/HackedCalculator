@@ -2,15 +2,13 @@
 # coding: utf8
 
 import time
+import click
 
 def run():
-    try:
-        input = raw_input('> ')
-        if(input == "exit"):
-            print "Beende Programm..."
+    while True:
+        if (key):
+            print "Taste: " + key
+            del key
         else:
-            print input
-        while True:
-            time.sleep(.1)
-    except KeyboardInterrupt:
-        print "Beende Programm..."
+            key = click.getchar()
+        time.sleep(.1)
