@@ -10,11 +10,12 @@ from PIL import ImageFont
 
 import status
 import keymanager
+from display import disp
 
 #Dimensions: 240 x 320
 class Manager:
     @classmethod
-    def startScreen(self, disp):
+    def startScreen(self):
         disp.clear((0, 0, 0))
         draw = disp.draw()
         #Y Links, X Links, Y Rechts, X Rechts
