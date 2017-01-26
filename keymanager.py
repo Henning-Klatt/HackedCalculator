@@ -13,6 +13,7 @@ def run():
             print "Taste: " + key
             if(key == "c"):
                 print "Beende Programm..."
+                Manager = Manager()
                 Manager.stopScreen()
                 disp.clear((0, 0, 0))
             del key
