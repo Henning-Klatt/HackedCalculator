@@ -16,6 +16,7 @@ from display import disp
 class Manager:
     @classmethod
     def startScreen(self):
+        print "Starting Screen Manager..."
         disp.clear((0, 0, 0))
         draw = disp.draw()
         #Y Links, X Links, Y Rechts, X Rechts
@@ -23,12 +24,11 @@ class Manager:
         font_hacked = ImageFont.truetype('Fonts/hacked.ttf', 25)
         draw_text(disp.buffer, "Henning's hacked calculator!", (45, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
-        print "Starting Screen Manager..."
         time.sleep(2)
         statusthread = Thread(target=status.run, args=(disp,))
         statusthread.start()
-        print "Started Screen manager"
 
+    @classmethod
     def stopScreen():
         statusthread.stop()
 
@@ -36,7 +36,7 @@ class Manager:
     def startKeymanager(self):
         keymanagerthread = Thread(target=keymanager.run, args=())
         keymanagerthread.start()
-        print "Keymanager aktiviert!"
+        print "Starting Keymanager..."
 
 
 def draw_text(image, text, position, angle, font, fill=(255,255,255)):
@@ -49,7 +49,7 @@ def draw_text(image, text, position, angle, font, fill=(255,255,255)):
     image.paste(rotated, position, rotated)
 
 def main():
-    print "Main Funktion"
+    print "Main Funktion Call"
 
 
 if __name__ == '__main__':
