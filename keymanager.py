@@ -5,7 +5,7 @@ import time
 import click
 
 from display import disp
-from screenmanager import Manager
+import screenmanager
 
 def run():
     while True:
