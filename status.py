@@ -2,13 +2,19 @@
 # coding: utf8
 
 import time
-import psutil
+import threading
+import Queue
 from datetime import timedelta
 
 from fonts import font_clean
 import screenmanager
 
-def run(disp):
+class Status(threading.Thread):
+  def __init__(self, queue):
+    threading.Thread.__init__(self)
+    self._queue = queue
+
+  def run(self):
     while True:
         disp.clear((0, 0, 0))
         draw = disp.draw()
@@ -20,3 +26,7 @@ def run(disp):
         screenmanager.draw_text(disp.buffer, cpu_usage + " %", (20, 200), 90, font_clean, fill=(255,255,255))
         disp.display()
         time.sleep(1)
+        msg = self._queue.get()
+        if isinstance(msg, str) and msg == 'quit':
+            break
+        print "I'm a thread, and I received %s!!" % msg
