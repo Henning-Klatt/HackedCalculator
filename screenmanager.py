@@ -2,6 +2,7 @@
 # coding: utf8
 import time
 import threading
+import multiprocessing
 
 from PIL import Image
 from PIL import ImageDraw
@@ -25,7 +26,7 @@ class Manager:
         draw_text(disp.buffer, "Henning's hacked calculator!", (45, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
         time.sleep(.1)
-        status = threading.Thread(target=Status().run, args = ())
+        status = multiprocessing.Process(target=Status().run, args = ())
         status.start()
 
     def stopScreen(self):
