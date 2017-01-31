@@ -25,14 +25,12 @@ class Manager:
         draw_text(disp.buffer, "Henning's hacked calculator!", (45, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
         time.sleep(2)
-        statusthread = Thread(target=status.run, args=(disp,))
-        global statusthread
-        statusthread.start()
+        self.statusthread = Thread(target=status.run, args=(disp,))
+        self.statusthread.start()
 
     @classmethod
     def stopScreen(self):
-        global statusthread
-        statusthread.do_run = False
+        self.statusthread.set()
 
     @classmethod
     def startKeymanager(self):
