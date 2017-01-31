@@ -9,7 +9,7 @@ from PIL import ImageDraw
 from PIL import ImageFont
 
 from status import Status
-import keymanager
+from keymanager import Manager
 from display import disp
 
 #Dimensions: 240 x 320
@@ -36,7 +36,7 @@ class Manager:
 
     @classmethod
     def startKeymanager(self):
-        self.keymanager = threading.Thread(target=keymanager.run, args = (self))
+        self.keymanager = threading.Thread(target=Manager.run, args = (self))
         self.keymanager.daemon = True
         self.keymanager.start()
 
