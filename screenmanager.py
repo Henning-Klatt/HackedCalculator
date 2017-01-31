@@ -31,7 +31,7 @@ class Manager:
         print "Beende Thread"
 
     def startKeymanager(self):
-        self.keymanager = threading.Thread(target=keymanager().run, args = ())
+        self.keymanager = threading.Thread(target=Keymanager().run, args = ())
         self.keymanager.start()
 
 
