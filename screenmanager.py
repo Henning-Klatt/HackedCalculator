@@ -13,7 +13,9 @@ from display import disp
 
 #Dimensions: 240 x 320
 class Manager:
+    status = False
     def startScreen(self):
+        global status
         print "Starting Screen Manager..."
         disp.clear((0, 0, 0))
         draw = disp.draw()
@@ -23,11 +25,12 @@ class Manager:
         draw_text(disp.buffer, "Henning's hacked calculator!", (45, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
         time.sleep(.1)
-        self.status = threading.Thread(target=Status().run, args = ())
-        self.status.start()
+        status = threading.Thread(target=Status().run, args = ())
+        status.start()
 
     def stopScreen(self):
-        self.status.terminate()
+        global status
+        status.terminate()
         print "Quit Info Screen"
 
     def startKeymanager(self):
