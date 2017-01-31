@@ -7,7 +7,7 @@ import Queue
 from datetime import timedelta
 
 from fonts import font_clean
-import display
+from display import disp
 
 class Status(threading.Thread):
   def __init__(self, queue):
