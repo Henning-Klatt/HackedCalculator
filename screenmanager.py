@@ -30,7 +30,7 @@ class Manager:
 
     @classmethod
     def stopScreen(self):
-        self.statusthread.set()
+        self.statusthread.wait()
 
     @classmethod
     def startKeymanager(self):
