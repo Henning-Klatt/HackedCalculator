@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf8
 import time
-import threading
 import multiprocessing
 
 from PIL import Image
@@ -29,14 +28,23 @@ class Manager:
         status = multiprocessing.Process(target=Status().run, args = ())
         status.start()
 
+    def showLogo(self):
+        disp.clear((0, 0, 0))
+        draw = disp.draw()
+        draw.line((40, 0, 40, 319), fill=(255,255,255))
+        font_hacked = ImageFont.truetype('Fonts/hacked.ttf', 25)
+        draw_text(disp.buffer, "Henning's hacked calculator!", (45, 0), 90, font_hacked, fill=(255,255,255))
+        disp.display()
+
     def stopScreen(self):
         global status
         status.terminate()
+        self.showLogo()
         print "Quit Info Screen"
 
     def startKeymanager(self):
         print "Starting Key Manager..."
-        self.keymanager = threading.Thread(target=Keymanager().run, args = ())
+        self.keymanager = multiprocessing.Process(target=Keymanager().run, args = ())
         self.keymanager.start()
 
 
