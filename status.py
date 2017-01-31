@@ -11,10 +11,8 @@ import screenmanager
 from fonts import font_clean
 from display import disp
 
-class Status(threading.Thread):
-  def __init__(self, queue):
-    threading.Thread.__init__(self)
-    self._queue = queue
+class Status:
+  def __init__(self):
 
   def run(self):
     while True:

@@ -2,14 +2,13 @@
 # coding: utf8
 import time
 #import threading
-from threading import Thread
-import Queue
+import Thread
 
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 
-from status import Status
+import status
 import keymanager
 from display import disp
 
@@ -26,13 +25,14 @@ class Manager:
         draw_text(disp.buffer, "Henning's hacked calculator!", (45, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
         time.sleep(.1)
-        self.statusqueue = Queue.Queue()
-        status = Status(self.statusqueue)
-        status.start()
+        self.status = threading.Thread(target=Status().run, args = (self))
+        self.status.daemon = True
+        self.status.start()
 
     @classmethod
     def stopScreen(self):
-        self.statusqueue.put('quit')
+        #self.status
+        print "Beende Thread"
 
     @classmethod
     def startKeymanager(self):
