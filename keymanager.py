@@ -4,7 +4,7 @@
 import time
 import click
 import sys, os
-import threading
+#import threading
 
 import screenmanager
 

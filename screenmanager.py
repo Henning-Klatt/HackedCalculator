@@ -35,10 +35,8 @@ class Manager:
 
     @classmethod
     def startKeymanager(self):
-        #self.keymanager = threading.Thread(target=Manager.run, args = (self))
-        #self.keymanager.daemon = True
-        #self.keymanager.start()
-        print "Keymanager"
+        self.keymanager = threading.Thread(target=Manager().run, args = ())
+        self.keymanager.start()
 
 
 def draw_text(image, text, position, angle, font, fill=(255,255,255)):
