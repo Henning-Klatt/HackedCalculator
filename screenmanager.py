@@ -26,7 +26,7 @@ class Manager:
         disp.display()
         time.sleep(.1)
         status = threading.Thread(target=Status.run, args = (self))
-        status.daemon = True
+        #status.daemon = True
         status.start()
 
     @classmethod
