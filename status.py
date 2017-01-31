@@ -7,6 +7,7 @@ import Queue
 import psutil
 from datetime import timedelta
 
+import screenmanager
 from fonts import font_clean
 from display import disp
 
