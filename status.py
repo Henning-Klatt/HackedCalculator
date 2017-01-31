@@ -12,8 +12,6 @@ from fonts import font_clean
 from display import disp
 
 class Status:
-  def __init__(self):
-
   def run(self):
     while True:
         disp.clear((0, 0, 0))
