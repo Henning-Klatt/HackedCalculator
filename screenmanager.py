@@ -14,7 +14,6 @@ from display import disp
 
 #Dimensions: 240 x 320
 class Manager:
-    @classmethod
     def startScreen(self):
         print "Starting Screen Manager..."
         disp.clear((0, 0, 0))
