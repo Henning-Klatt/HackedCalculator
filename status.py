@@ -24,3 +24,6 @@ class Status:
             screenmanager.draw_text(disp.buffer, cpu_usage + " %", (20, 200), 90, font_clean, fill=(255,255,255))
             disp.display()
             time.sleep(1)
+
+    def stop(self):
+        self.status.terminate()

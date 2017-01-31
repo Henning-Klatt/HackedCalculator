@@ -22,8 +22,8 @@ class Keymanager:
                     os._exit(1)
                 if(key == "h"):
                     print "Home Menü"
-                    screenmanager.Manager().stopScreen(self)
+                    screenmanager.Manager().stopScreen()
                 del key
             else:
                 key = click.getchar()
-            time.sleep(.1)
+        time.sleep(.1)
