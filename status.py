@@ -26,4 +26,4 @@ class Status:
             time.sleep(1)
 
     def stop(self):
-        self.status.terminate()
+        self.terminate()
