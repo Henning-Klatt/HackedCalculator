@@ -27,8 +27,8 @@ class Manager:
         self.status.start()
 
     def stopScreen(self):
-        Status().stop()
-        print "Beende Info Screen"
+        self.status.terminate()
+        print "Quit Info Screen"
 
     def startKeymanager(self):
         print "Starting Key Manager..."
