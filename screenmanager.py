@@ -8,7 +8,7 @@ from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 
-import status
+from status import Status
 import keymanager
 from display import disp
 
@@ -25,7 +25,7 @@ class Manager:
         draw_text(disp.buffer, "Henning's hacked calculator!", (45, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
         time.sleep(.1)
-        self.status = threading.Thread(target=Status().run, args = (self))
+        self.status = threading.Thread(target=Status.run, args = (self))
         self.status.daemon = True
         self.status.start()
 
