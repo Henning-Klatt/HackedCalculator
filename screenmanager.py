@@ -3,6 +3,7 @@
 import time
 #import threading
 from threading import Thread
+import Queue
 
 from PIL import Image
 from PIL import ImageDraw
