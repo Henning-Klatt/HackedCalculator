@@ -9,7 +9,7 @@ from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 
-import status
+from status import Status
 import keymanager
 from display import disp
 
@@ -25,7 +25,7 @@ class Manager:
         font_hacked = ImageFont.truetype('Fonts/hacked.ttf', 25)
         draw_text(disp.buffer, "Henning's hacked calculator!", (45, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
-        time.sleep(2)
+        time.sleep(.1)
         self.statusqueue = Queue.Queue()
         status = Status(self.statusqueue)
         status.start()
