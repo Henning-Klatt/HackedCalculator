@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding: utf8
 import time
-#import threading
 import threading
 
 from PIL import Image
@@ -9,7 +8,7 @@ from PIL import ImageDraw
 from PIL import ImageFont
 
 from status import Status
-from keymanager import Manager
+from keymanager import Keymanager
 from display import disp
 
 #Dimensions: 240 x 320
@@ -27,14 +26,12 @@ class Manager:
         self.status = threading.Thread(target=Status().run, args = ())
         self.status.start()
 
-    @classmethod
     def stopScreen(self):
         #self.status
         print "Beende Thread"
 
-    @classmethod
     def startKeymanager(self):
-        self.keymanager = threading.Thread(target=Manager().run, args = ())
+        self.keymanager = threading.Thread(target=keymanager().run, args = ())
         self.keymanager.start()
 
 

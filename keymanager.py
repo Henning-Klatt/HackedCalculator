@@ -10,7 +10,7 @@ import screenmanager
 
 from display import disp
 
-class Manager:
+class Keymanager:
     def run(self):
         while True:
             if 'key' in locals():
