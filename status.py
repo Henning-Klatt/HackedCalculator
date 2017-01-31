@@ -3,7 +3,7 @@
 
 import time
 import threading
-import Queue
+#import Queue
 import psutil
 from datetime import timedelta
 

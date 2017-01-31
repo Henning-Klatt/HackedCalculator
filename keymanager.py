@@ -4,6 +4,7 @@
 import time
 import click
 import sys, os
+import threading
 
 import screenmanager
 
@@ -21,7 +22,7 @@ class Manager:
                     os._exit(1)
                 if(key == "h"):
                     print "Home Menü"
-                    screenmanager.Manager.stopScreen()
+                    #screenmanager.Manager.stopScreen()
                 del key
             else:
                 key = click.getchar()
