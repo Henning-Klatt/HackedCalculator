@@ -4,6 +4,7 @@
 import time
 import threading
 import Queue
+import psutil
 from datetime import timedelta
 
 from fonts import font_clean
