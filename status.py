@@ -23,8 +23,4 @@ class Status:
         screenmanager.draw_text(disp.buffer, "CPU Load: ", (20, 250), 90, font_clean, fill=(255,255,255))
         screenmanager.draw_text(disp.buffer, cpu_usage + " %", (20, 200), 90, font_clean, fill=(255,255,255))
         disp.display()
-        #time.sleep(1)
-        msg = self._queue.get()
-        if isinstance(msg, str) and msg == 'quit':
-            break
-        print "I'm a thread, and I received %s!!" % msg
+        time.sleep(1)
