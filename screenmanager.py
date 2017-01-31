@@ -27,10 +27,11 @@ class Manager:
         self.status.start()
 
     def stopScreen(self):
-        #self.status
-        print "Beende Thread"
+        self.status.exit()
+        print "Beende Info Screen"
 
     def startKeymanager(self):
+        print "Starting Key Manager..."
         self.keymanager = threading.Thread(target=Keymanager().run, args = ())
         self.keymanager.start()
 
