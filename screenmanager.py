@@ -25,9 +25,8 @@ class Manager:
         draw_text(disp.buffer, "Henning's hacked calculator!", (45, 0), 90, font_hacked, fill=(255,255,255))
         disp.display()
         time.sleep(.1)
-        status = threading.Thread(target=Status.run, args = (self))
-        #status.daemon = True
-        status.start()
+        self.status = threading.Thread(target=Status.run, args = (self,))
+        self.status.start()
 
     @classmethod
     def stopScreen(self):
