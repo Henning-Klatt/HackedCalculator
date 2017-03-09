@@ -19,7 +19,7 @@ class Manager:
     def startScreen(self):
         global status
         print "Starting Screen Manager..."
-        disp.clear((0, 0, 0))
+        disp.clear()
         draw = disp.draw()
         #Y Links, X Links, Y Rechts, X Rechts
         draw.line((40, 0, 40, 319), fill=(255,255,255))
@@ -30,7 +30,7 @@ class Manager:
         status.start()
 
     def showLogo(self):
-        disp.clear((0, 0, 0))
+        disp.clear()
         draw = disp.draw()
         draw.line((40, 0, 40, 319), fill=(255,255,255))
         draw_text(disp.buffer, "Henning's hacked calculator!", (45, 0), 90, font_hacked, fill=(255,255,255))
