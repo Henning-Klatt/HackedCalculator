@@ -7,6 +7,10 @@ import threading
 import psutil
 import socket
 from datetime import timedelta
+import RPi.GPIO as GPIO
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(4, GPIO.IN) #, pull_up_down=GPIO.PUD_DOWN
 
 import screenmanager
 from fonts import font_clean
@@ -28,5 +32,7 @@ class Status:
             screenmanager.draw_text(disp.buffer, cpu_usage + " %", (20, 200), 90, font_clean, fill=(255,255,255))
             screenmanager.draw_text(disp.buffer, "IP: ", (40, 250), 90, font_clean, fill=(255,255,255))
             screenmanager.draw_text(disp.buffer, ip, (40, 200), 90, font_clean, fill=(255,255,255))
+            screenmanager.draw_text(disp.buffer, "BT: ", (60, 250), 90, font_clean, fill=(255,255,255))
+            screenmanager.draw_text(disp.buffer, str(GPIO.input(4)), (60, 200), 90, font_clean, fill=(255,0,0))
             disp.display()
             time.sleep(1)
