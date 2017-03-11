@@ -17,7 +17,7 @@ class Status:
         while True:
             #disp.reset()
             disp.clear()
-            disp.display()
+            #disp.display()
             draw = disp.draw()
             uptime = str(timedelta(seconds = float(open('/proc/uptime', 'r').readline().split()[0]))).rsplit('.', 1)[0]
             cpu_usage = str(psutil.cpu_percent())
