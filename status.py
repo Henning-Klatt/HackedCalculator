@@ -25,9 +25,10 @@ class Status:
         while True:
             free_ram = psutil.virtual_memory()[1]
             print free_ram
-            #if((free_ram) < 10000000):
-                #disp.reset()
-                #disp.begin()
+            if((free_ram) < 30000000):
+                disp.reset()
+                disp.begin()
+                print "Cleared Memory"
             disp.clear()
             draw = disp.draw()
             uptime = str(timedelta(seconds = float(open('/proc/uptime', 'r').readline().split()[0]))).rsplit('.', 1)[0]
