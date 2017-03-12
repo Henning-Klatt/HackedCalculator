@@ -3,9 +3,8 @@
 
 import time
 import threading
-#import Queue
 import psutil
-import socket
+import subprocess
 from datetime import timedelta
 import RPi.GPIO as GPIO
 import screenmanager
