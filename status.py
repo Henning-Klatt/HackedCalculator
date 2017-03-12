@@ -2,10 +2,9 @@
 # coding: utf8
 
 import time
-import os
-import threading
+#import threading
 import psutil
-import subprocess
+import socket
 from datetime import timedelta
 import RPi.GPIO as GPIO
 import screenmanager
@@ -18,7 +17,7 @@ def lowBat(channel):
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.IN) #, pull_up_down=GPIO.PUD_DOWN
 GPIO.add_event_detect(4, GPIO.FALLING, callback=lowBat, bouncetime=200)
-
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 
 class Status:
@@ -30,7 +29,9 @@ class Status:
             draw = disp.draw()
             uptime = str(timedelta(seconds = float(open('/proc/uptime', 'r').readline().split()[0]))).rsplit('.', 1)[0]
             cpu_usage = str(psutil.cpu_percent())
-            ip = os.popen('ip addr show wlan0 | grep "\<inet\>" | awk \'{ print $2 }\' | awk -F "/" \'{ print $1 }\'').read().strip()
+            s.connect(('0.0.0.0', 1027))
+            ip = s.getsockname()[0]
+            s.close()
             screenmanager.draw_text(disp.buffer, "Uptime: ", (0, 250), 90, font_clean, fill=(255,255,255))
             screenmanager.draw_text(disp.buffer, uptime, (0, 200), 90, font_clean, fill=(255,255,255))
             screenmanager.draw_text(disp.buffer, "CPU Load: ", (20, 250), 90, font_clean, fill=(255,255,255))
