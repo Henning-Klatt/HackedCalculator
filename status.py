@@ -23,7 +23,6 @@ GPIO.add_event_detect(4, GPIO.FALLING, callback=lowBat, bouncetime=200)
 class Status:
     def run(self):
         while True:
-            disp.reset()
             disp.clear()
             #disp.display()
             draw = disp.draw()
@@ -43,3 +42,4 @@ class Status:
             screenmanager.draw_text(disp.buffer, str(GPIO.input(4)), (60, 200), 90, font_clean, fill=(255,0,0))
             disp.display()
             time.sleep(1)
+            disp.reset()
