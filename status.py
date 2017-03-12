@@ -41,7 +41,7 @@ class Status:
             screenmanager.draw_text(disp.buffer, "CPU Load: ", (20, 250), 90, font_clean, fill=(255,255,255))
             screenmanager.draw_text(disp.buffer, cpu_usage + " %", (20, 200), 90, font_clean, fill=(255,255,255))
             screenmanager.draw_text(disp.buffer, "Free RAM: ", (40, 250), 90, font_clean, fill=(255,255,255))
-            screenmanager.draw_text(disp.buffer, free_ram, (40, 50), 90, font_clean, fill=(255,255,255))
+            screenmanager.draw_text(disp.buffer, str(free_ram), (40, 50), 90, font_clean, fill=(255,255,255))
             screenmanager.draw_text(disp.buffer, "IP: ", (60, 250), 90, font_clean, fill=(255,255,255))
             screenmanager.draw_text(disp.buffer, ip, (60, 50), 90, font_clean, fill=(255,255,255))
             screenmanager.draw_text(disp.buffer, "BT: ", (80, 250), 90, font_clean, fill=(255,255,255))
