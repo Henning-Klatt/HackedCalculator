@@ -8,18 +8,18 @@ import psutil
 import socket
 from datetime import timedelta
 import RPi.GPIO as GPIO
+import screenmanager
+from fonts import font_clean
+from display import disp
+
+def lowBat(channel):
+    print "Low battery!"
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.IN) #, pull_up_down=GPIO.PUD_DOWN
 GPIO.add_event_detect(4, GPIO.FALLING, callback=lowBat, bouncetime=200)
 
-import screenmanager
-from fonts import font_clean
-from display import disp
 
-
-def lowBat(channel):
-    print "Low battery!"
 
 class Status:
     def run(self):
