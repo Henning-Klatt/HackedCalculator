@@ -29,7 +29,7 @@ class Status:
             draw = disp.draw()
             uptime = str(timedelta(seconds = float(open('/proc/uptime', 'r').readline().split()[0]))).rsplit('.', 1)[0]
             cpu_usage = str(psutil.cpu_percent())
-            s.connect(('0.0.0.0', 1027))
+            s.connect(('192.168.178.1', 1027))
             ip = s.getsockname()[0]
             s.close()
             screenmanager.draw_text(disp.buffer, "Uptime: ", (0, 250), 90, font_clean, fill=(255,255,255))
