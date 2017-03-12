@@ -17,7 +17,7 @@ def lowBat(channel):
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.IN) #, pull_up_down=GPIO.PUD_DOWN
 GPIO.add_event_detect(4, GPIO.FALLING, callback=lowBat, bouncetime=200)
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+#
 
 
 class Status:
@@ -29,6 +29,7 @@ class Status:
             draw = disp.draw()
             uptime = str(timedelta(seconds = float(open('/proc/uptime', 'r').readline().split()[0]))).rsplit('.', 1)[0]
             cpu_usage = str(psutil.cpu_percent())
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
             s.connect(('192.168.178.1', 1027))
             ip = s.getsockname()[0]
             s.close()
