@@ -23,9 +23,8 @@ GPIO.add_event_detect(4, GPIO.FALLING, callback=lowBat, bouncetime=200)
 class Status:
     def run(self):
         while True:
-            disp.clear()
-            #disp.display()
-            draw = disp.draw()
+            #disp.clear()
+            #draw = disp.draw()
             uptime = str(timedelta(seconds = float(open('/proc/uptime', 'r').readline().split()[0]))).rsplit('.', 1)[0]
             cpu_usage = str(psutil.cpu_percent())
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -40,6 +39,5 @@ class Status:
             screenmanager.draw_text(disp.buffer, ip, (40, 50), 90, font_clean, fill=(255,255,255))
             screenmanager.draw_text(disp.buffer, "BT: ", (60, 250), 90, font_clean, fill=(255,255,255))
             screenmanager.draw_text(disp.buffer, str(GPIO.input(4)), (60, 200), 90, font_clean, fill=(255,0,0))
-            disp.display()
+            #disp.display()
             time.sleep(1)
-            disp.reset()
